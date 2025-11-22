@@ -6,38 +6,38 @@
 /*   By: g-alves- <g-alves-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 17:40:26 by g-alves-          #+#    #+#             */
-/*   Updated: 2025/11/18 21:45:04 by g-alves-         ###   ########.fr       */
+/*   Updated: 2025/11/22 11:50:22 by g-alves-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_strjoin(char const *string_line, char const *buffer)
+char	*ft_strjoin(char const *string_line, char *buffer)
 {
 	char	*full_string;
 	size_t	index_str;
+	size_t	index_full_str;
 
-	if (!string_line || !buffer)
+	if (!buffer)
 		return (NULL);
 	full_string = malloc((ft_strlen(string_line) + ft_strlen(buffer) + 1)
 			* (sizeof(char)));
 	if (!full_string)
 		return (NULL);
 	index_str = 0;
-	while (*string_line)
+	if (string_line)
+		index_full_str = ft_strlen(string_line);
+	else
+		index_full_str = 0;
+	while (string_line && string_line[index_str])
 	{
-		full_string[index_str] = *string_line;
+		full_string[index_str] = string_line[index_str];
 		index_str++;
-		string_line++;
 	}
-	while (*buffer)
-	{
-		full_string[index_str] = *buffer;
-		index_str++;
-		buffer++;
-	}
-	full_string[index_str] = '\0';
-	free(string_line);
+	index_str = 0;
+	while (buffer && buffer[index_str])
+		full_string[index_full_str++] = buffer[index_str++];
+	full_string[index_full_str] = '\0';
 	return (full_string);
 }
 
@@ -46,6 +46,8 @@ char	*ft_strchr(const char *string, int c)
 	int	index;
 
 	index = 0;
+	if (!string)
+		return (NULL);
 	while ((unsigned char)string[index])
 	{
 		if ((unsigned char)string[index] == (unsigned char)c)
@@ -61,8 +63,41 @@ size_t	ft_strlen(const char *string)
 {
 	size_t	length;
 
+	if (!string)
+		return (0);
 	length = 0;
-	while (*string++)
+	while (string[length] != '\0')
 		length++;
 	return (length);
+}
+
+void	*ft_calloc(size_t nmemb, size_t size)
+{
+	size_t	memory_size;
+	void	*allocated_memory;
+
+	memory_size = nmemb * size;
+	if (nmemb == 0 || size == 0)
+		memory_size = 1;
+	if (((nmemb != 0) && (size != 0)) && (memory_size / size) != nmemb)
+		return (NULL);
+	allocated_memory = malloc(memory_size);
+	if (!allocated_memory)
+		return (NULL);
+	ft_bzero(allocated_memory, memory_size);
+	return (allocated_memory);
+}
+
+void	ft_bzero(void *s, size_t n)
+{
+	unsigned int	index;
+	unsigned char	*casting_void;
+
+	index = 0;
+	casting_void = (unsigned char *)s;
+	while (index < n)
+	{
+		casting_void[index] = 0;
+		index++;
+	}
 }

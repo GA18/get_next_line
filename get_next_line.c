@@ -6,12 +6,12 @@
 /*   By: g-alves- <g-alves-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 16:14:41 by g-alves-          #+#    #+#             */
-/*   Updated: 2025/11/20 22:24:33 by g-alves-         ###   ########.fr       */
+/*   Updated: 2025/11/22 12:11:23 by g-alves-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#define BUFFER_SIZE 42
+
 
 char	*get_next_line(int fd)
 {
@@ -31,25 +31,29 @@ char	*get_next_line(int fd)
 char	*ft_read_line(int fd, char *full_string)
 {
 	char	*buffer;
+	char	*buffer_line;
 	size_t	read_bytes;
 
+	buffer_line = NULL;
 	read_bytes = 1;
 	buffer = malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!buffer)
 		return (NULL);
-	while (!(ft_strchr(full_string, '\n')) && read_bytes != 0)
+	while (!(ft_strchr(full_string, '\n')) && read_bytes)
 	{
 		read_bytes = read(fd, buffer, BUFFER_SIZE);
+		if (!read_bytes)
+			break ;
 		if (read_bytes == -1)
 		{
 			free(buffer);
 			return (NULL);
 		}
 		buffer[read_bytes] = '\0';
-		full_string = ft_strjoin(full_string, buffer);
+		buffer_line = ft_strjoin(buffer_line, buffer);
 	}
 	free(buffer);
-	return (full_string);
+	return (buffer_line);
 }
 
 char	*ft_get_line(char *line)
@@ -60,7 +64,7 @@ char	*ft_get_line(char *line)
 	count_bytes = 0;
 	while (line[count_bytes] != '\n' && line[count_bytes] != '\0')
 		count_bytes++;
-	string_line = malloc(count_bytes + 2);
+	string_line = malloc(count_bytes + 1);
 	if (!string_line)
 		return (NULL);
 	count_bytes = 0;
@@ -71,31 +75,33 @@ char	*ft_get_line(char *line)
 	}
 	if (line[count_bytes] == '\n')
 		string_line[count_bytes] = line[count_bytes];
-		string_line[count_bytes] = '\0';
+	string_line[++count_bytes] = '\0';
 	return (string_line);
 }
 
 char	*ft_new_line(char *full_string)
 {
-	size_t	count_newline;
+	size_t	count_bytes;
 	size_t	count_remainder;
-	char	*string_remainder;
+	size_t	fill_remainder;
+	char	*string_line;
+	char	*buffer_remainder;
 
-	count_newline = 0;
+	buffer_remainder = NULL;
 	if (!full_string)
 		return (NULL);
-	while (full_string && full_string[count_newline] != '\n')
-		count_newline++;
-	count_remainder = (ft_strlen(full_string)) - count_newline;
-	string_remainder = malloc(sizeof(char) * count_remainder);
-	if (!string_remainder)
+	count_bytes = 0;
+	while (full_string[count_bytes] != '\n' && full_string[count_bytes] != '\0')
+		count_bytes++;
+	count_remainder = ft_strlen(full_string);
+	if ((count_remainder - count_bytes) > 0)
+		buffer_remainder = ft_calloc(count_remainder, sizeof(char *));
+	if (!buffer_remainder)
 		return (NULL);
-	while ((count_remainder + count_newline) != 0)
-	{
-		string_remainder = full_string[++count_newline];
-		string_remainder++;
-		count_remainder--;
-	}
+	fill_remainder = 0;
+	while (full_string[count_bytes] != '\0')
+		buffer_remainder[fill_remainder++] = full_string[++count_bytes];
+	buffer_remainder[count_remainder] = '\0';
 	free(full_string);
-	return (string_remainder);
+	return (buffer_remainder);
 }
