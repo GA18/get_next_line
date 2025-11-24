@@ -6,7 +6,7 @@
 /*   By: g-alves- <g-alves-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 16:14:41 by g-alves-          #+#    #+#             */
-/*   Updated: 2025/11/22 13:47:08 by g-alves-         ###   ########.fr       */
+/*   Updated: 2025/11/24 16:00:00 by g-alves-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,8 +82,8 @@ char	*ft_get_line(char *line)
 		count_bytes++;
 	}
 	if (line[count_bytes] == '\n')
-		string_line[count_bytes] = line[count_bytes];
-	string_line[++count_bytes] = '\0';
+		string_line[count_bytes++] = '\n';
+	string_line[count_bytes] = '\0';
 	return (string_line);
 }
 
@@ -100,9 +100,9 @@ char	*ft_new_line(char *full_string)
 	count_bytes = 0;
 	while (full_string[count_bytes] != '\n' && full_string[count_bytes] != '\0')
 		count_bytes++;
-	count_remainder = ft_strlen(full_string);
+	count_remainder = (ft_strlen(full_string) + 1);
 	if ((count_remainder - count_bytes) > 0)
-		buffer_remainder = ft_calloc(count_remainder, sizeof(char));
+		buffer_remainder = ft_calloc(count_remainder + 1, sizeof(char));
 	if (!buffer_remainder)
 		return (NULL);
 	fill_remainder = 0;

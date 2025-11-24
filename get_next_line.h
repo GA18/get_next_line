@@ -6,14 +6,14 @@
 /*   By: g-alves- <g-alves-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 16:13:48 by g-alves-          #+#    #+#             */
-/*   Updated: 2025/11/22 13:47:18 by g-alves-         ###   ########.fr       */
+/*   Updated: 2025/11/24 16:19:02 by g-alves-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# define BUFFER_SIZE 100000
+# define BUFFER_SIZE 10737418240
 
 # include <stdio.h>
 # include <unistd.h>

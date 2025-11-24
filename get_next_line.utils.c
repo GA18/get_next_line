@@ -6,7 +6,7 @@
 /*   By: g-alves- <g-alves-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 17:40:26 by g-alves-          #+#    #+#             */
-/*   Updated: 2025/11/22 11:50:22 by g-alves-         ###   ########.fr       */
+/*   Updated: 2025/11/24 14:10:17 by g-alves-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ char	*ft_strjoin(char const *string_line, char *buffer)
 
 	if (!buffer)
 		return (NULL);
-	full_string = malloc((ft_strlen(string_line) + ft_strlen(buffer) + 1)
-			* (sizeof(char)));
+	full_string = ft_calloc((ft_strlen(string_line) + ft_strlen(buffer) + 1),
+			sizeof(char));
 	if (!full_string)
 		return (NULL);
 	index_str = 0;

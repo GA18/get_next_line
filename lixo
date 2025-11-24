@@ -1,0 +1,275 @@
+	full_string = get_next_line(fd);
+	printf("linha 2: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 3: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 4: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 5: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 6: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 7: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 8: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 9: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 10: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 11: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 12: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 13: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 14: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 15: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 16: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 17: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 18: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 19: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 20: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 21: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 22: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 23: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 24: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 25: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 26: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 27: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 28: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 29: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 30: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 31: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 32: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 33: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 34: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 35: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 36: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 37: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 38: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 39: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 40: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 41: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 42: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 43: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 44: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 45: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 46: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 47: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 48: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 49: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 50: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 51: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 52: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 53: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 54: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 55: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 56: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 57: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 58: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 59: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 60: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 61: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 62: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 63: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 64: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 65: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 66: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 67: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 68: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 69: %s", full_string);
+	free(full_string);
+
+	full_string = get_next_line(fd);
+	printf("linha 70: %s", full_string);
+	free(full_string);

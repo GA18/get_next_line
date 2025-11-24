@@ -6,7 +6,7 @@
 /*   By: g-alves- <g-alves-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 18:21:32 by g-alves-          #+#    #+#             */
-/*   Updated: 2025/11/22 13:46:46 by g-alves-         ###   ########.fr       */
+/*   Updated: 2025/11/24 16:13:51 by g-alves-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,16 @@
 int	main(void)
 {
 	int		fd;
+	size_t	i;
 	char	*full_string;
 
+	i = 0;
 	fd = open ("file.txt", O_RDONLY);
-	full_string = get_next_line(fd);
-	printf("linha 1: %s", full_string);
-	free(full_string);
-
-	full_string = get_next_line(fd);
-	printf("linha 2: %s", full_string);
-	free(full_string);
-
-	full_string = get_next_line(fd);
-	printf("linha 3: %s", full_string);
-	free(full_string);
-	get_next_line(-1);
+	while ((full_string = get_next_line(fd)) != NULL)
+	{
+		printf("Linha %zu: %s", i, full_string);
+		i++;
+		free(full_string);
+	}
 	return (0);
 }
