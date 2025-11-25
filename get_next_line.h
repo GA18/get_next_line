@@ -6,14 +6,16 @@
 /*   By: g-alves- <g-alves-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 16:13:48 by g-alves-          #+#    #+#             */
-/*   Updated: 2025/11/24 16:19:02 by g-alves-         ###   ########.fr       */
+/*   Updated: 2025/11/25 18:45:24 by g-alves-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# define BUFFER_SIZE 10737418240
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
 # include <stdio.h>
 # include <unistd.h>
@@ -31,5 +33,6 @@ char	*ft_strchr(const char *string, int c);
 char	*ft_substr(char const *full_string, unsigned int start, size_t len);
 void	*ft_calloc(size_t nmemb, size_t size);
 void	ft_bzero(void *s, size_t n);
+int		check_read(int read_bytes, char ***full_string);
 
 #endif

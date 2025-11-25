@@ -6,12 +6,11 @@
 /*   By: g-alves- <g-alves-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 16:14:41 by g-alves-          #+#    #+#             */
-/*   Updated: 2025/11/24 16:00:00 by g-alves-         ###   ########.fr       */
+/*   Updated: 2025/11/25 18:46:40 by g-alves-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
 
 char	*get_next_line(int fd)
 {
@@ -25,7 +24,9 @@ char	*get_next_line(int fd)
 		return (NULL);
 	}
 	ft_read_line(fd, &full_string);
-	if (!full_string || !full_string[0])
+	if (!full_string)
+		return (NULL);
+	else if (!full_string[0])
 	{
 		free(full_string);
 		full_string = NULL;
@@ -49,9 +50,7 @@ void	ft_read_line(int fd, char **full_string)
 	while (!(ft_strchr(*full_string, '\n')) && read_bytes)
 	{
 		read_bytes = read(fd, buffer, BUFFER_SIZE);
-		if (!read_bytes)
-			break ;
-		if (read_bytes == -1)
+		if (!(check_read(read_bytes, &full_string)))
 		{
 			free(buffer);
 			return ;
@@ -110,4 +109,20 @@ char	*ft_new_line(char *full_string)
 		buffer_remainder[fill_remainder++] = full_string[++count_bytes];
 	free(full_string);
 	return (buffer_remainder);
+}
+
+int	check_read(int read_bytes, char ***full_string)
+{
+	if (read_bytes == -1)
+	{
+		if (**full_string)
+		{
+			free(**full_string);
+			**full_string = NULL;
+		}
+		return (0);
+	}
+	if (read_bytes == 0)
+		return (0);
+	return (1);
 }
